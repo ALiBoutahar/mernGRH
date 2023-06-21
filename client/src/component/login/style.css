@@ -1,0 +1,45 @@
+*{
+    background-color:var(white);
+}
+.login{
+    margin-top: 3500px;
+    width: 600px;
+    margin: 50px auto;
+}
+.login h2 {
+    color: #3445b4;
+    font-size: 30px;
+    
+}
+.loginforms{
+    border: 2px solid rgba(193, 196, 247, 0.607);
+    border-radius: 20px;
+    padding: 80px;
+    width: 600px;
+    height: 450px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+input[type="password"],input[type="text"]{
+    border: none;
+    font-size: 20px;
+}
+
+.inscrire{
+    margin-top: 500px;
+    width: 600px;
+    margin: 20px auto;
+}
+
+.inscrire h2 {
+    color: #3445b4;
+    font-size: 30px;
+    
+}
+.inscrireforms{
+    border: 2px solid rgba(193, 196, 247, 0.607);
+    border-radius: 20px;
+    padding: 50px;
+    width: 600px;
+    height: 550px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}

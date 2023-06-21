@@ -1,0 +1,13 @@
+#login{
+    width: 120%;
+    border: 2px solid rgba(103, 85, 170, 0.475);
+    padding: 50px;
+    border-radius: 3%;
+}
+.password{
+    display: flex;
+}
+#pass{
+    width:200px;
+    
+}

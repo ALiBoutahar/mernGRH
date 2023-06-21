@@ -1,0 +1,48 @@
+tbody {
+    display: block;
+    overflow: auto;
+    height: 380px;
+    width: 100%;
+  }
+  
+  thead tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  thead {
+    width: 100%
+  }
+  .Active{
+	width: 10px;
+	padding: 10px;
+	background-color: rgb(243, 71, 71);
+	border: 2px solid white;
+	border-radius: 100%;
+	margin-left: 20px;
+}
+.Active1{
+	margin-left: 20px;
+	width: 10px;
+	padding: 10px;
+	background-color: rgb(63, 228, 66);
+	border: 2px solid white;
+	border-radius: 100%;
+}
+.searchBar{
+	display: flex;
+}
+
+.add {
+  display: block;
+  overflow: auto;
+  height: 560px;
+  width: 100%;
+}
