@@ -33,9 +33,9 @@ function AjouterPatient() {
         setcompetances([]);
     }
 
-    // const handleDelete=(name)=>{
-    //     setcompetances(competances.filter((pers)=>{return pers.name !==name}))           
-    // }
+    const handleDelete=(name)=>{
+        setcompetances(competances.filter((pers)=>{return pers.name !==name}))           
+    }
 
     const Add=(e)=>{
         e.preventDefault();
@@ -109,7 +109,7 @@ function AjouterPatient() {
                                             <input type="text" className="form-control" id="service" name='service' value={product.value}  />
                                         </div>
                                         <div className="col-4 text-center">
-                                            {/* <input type="submit" className=' mt-1 btn btn-danger btn-sm' value="X" onClick={()=>handleDelete(product.name)}/> */}
+                                            <input type="submit" className=' mt-1 btn btn-danger btn-sm' value="X" onClick={()=>handleDelete(product.name)}/>
                                         </div>
                                     </div>
                                     ))}
