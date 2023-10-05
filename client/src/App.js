@@ -9,6 +9,8 @@ import Acceuil from './component/pages/accueil/Acceuil';
 import './component/SideNavBar/SideNavBar.css';
 import Signup from "./component/login/Signup";
 import Login from "./component/login/Login";
+import Send from "./component/login/sending";
+
 const App = () => {
     const isloggedIn = window.localStorage.getItem("loggedIn");
     // console.log(isloggedIn);
@@ -24,6 +26,8 @@ const App = () => {
                 <Route path='/Patient/:id/EditPatient' element={isloggedIn === null ? < Login /> : <EditPatient/>} />
                 <Route path='/Patient/DetailsPatient/:id' element={isloggedIn === null ? < Login /> : <DetailsPatient/>} />
                 <Route path='/Parametre' element={isloggedIn === null ? < Login /> : <Parametre />} />
+                <Route path='/Contact-us' element={isloggedIn === null ? < Login /> : <Send/>} />
+
             </Routes>
         </Router> 
     )

@@ -13,7 +13,7 @@ function Signup() {
 
     const add = (e) =>{
         e.preventDefault();
-        axios.post("http://localhost:5000/Register", {user, tele, email, pass})
+        axios.post("http://localhost:5000/Register-user", {user, tele, email, pass})
         .then(Response=>{
            console.log(Response.data)
         });

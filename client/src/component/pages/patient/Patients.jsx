@@ -46,7 +46,7 @@ function Patients() {
             setPatient(use)
             setPatientItem(use)
         });
-    },[]); 
+    },[]);  
     // const deletePatient = (ids) => {
     //     Swal.fire({
     //         title: 'es-tu sûr ?',

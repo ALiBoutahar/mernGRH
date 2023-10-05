@@ -29,25 +29,25 @@ function DashItem() {
         </div>
     
         <div className='col-md-4 col-sm-4' style={{maxWidth : "25%"}} >
-            <Link to={"/Patient"}>
+            <Link to={"/Patient"} >
                 <div className='column'>
                     <div className='png'>
                     <i className="fa fa-address-card"></i>
-                    <h5>Add Personne</h5>
+                    <h5>Personnes</h5>
                     </div>
                 </div>
             </Link>
         </div>
 
         <div className='col-md-4 col-sm-4' style={{maxWidth : "25%"}} >
-            {/* <Link to={"/AjouterOrdonnance"}> */}
+            <Link to={"/Contact-us"}>
                 <div className='column'>
                     <div className='png'>
                     <i className="fa fa-book"></i>
-                    <h5>Add Absence</h5>
+                    <h5>Contact-us</h5>
                     </div>
                 </div>
-            {/* </Link> */}
+            </Link>
         </div>
     </div>
 

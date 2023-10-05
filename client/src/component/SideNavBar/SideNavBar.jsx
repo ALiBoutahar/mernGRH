@@ -56,12 +56,12 @@ const SideNavBar = (props) => {
 		// 	icon: "icons/pie-chart.svg",
 		// 	to : "/"	
 		// },
-		// {
-		// 	id : 5,
-		// 	text: "Type medicament",
-		// 	icon: "icons/folder.svg",
-		// 	to : "/TypeMedicament"		
-		// },
+		{
+			id : 5,
+			text: "Type medicament",
+			icon: "icons/folder.svg",
+			to : "/Contact-us"		
+		},
 		
 		{
 			id : 5,
