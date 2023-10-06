@@ -26,14 +26,14 @@ sendRoutes.post('/send-email', upload.single('attachment'), async (req, res) => 
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: '*********************',
+        user: 'ali27karam09@gmail.com',
         pass: `${pass}`, // Use your actual password securely, perhaps from environment variables
       },
     });
 
     const mailOptions = {
-      from: '*********************',
-      to: '*********************',
+      from: 'ali27karam09@gmail.com',
+      to: 'ali99boutahar@gmail.com',
       subject,
       text: message,
       attachments: attachment

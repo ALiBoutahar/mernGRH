@@ -2,6 +2,29 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("../model/personnes");
 
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, '../client/public/images'); // Store uploads in the 'uploads' directory
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + '-' + file.originalname);
+  },
+});
+
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (file.fieldname === 'image' || file.fieldname === 'cv') {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file type for ' + file.fieldname));
+    }
+  },
+});
+// const upload = multer({ storage: storage });
 
 // **************************************************************Select la collection
 const Personne = mongoose.model("personnesGRH");
@@ -23,12 +46,16 @@ personeRoutes.post("/persone",async(req, res)=>{
 });
 
 // ********************************************************************** Create personne
-personeRoutes.post("/Add_persone",async( req, res )=>{
-  const  {cin, nom, prenom, email, tele, naissance, image, service, competance, type, valide} = req.body ;
+personeRoutes.post("/Add_persone",upload.fields([{ name: 'image', maxCount: 1 }, { name: 'cv', maxCount: 1 }]), async( req, res )=>{
+  const  {cin, nom, prenom, email, tele, naissance, service, competance, type, valide} = req.body ;
   try{
-    await Personne.create({cin, nom, prenom, email, tele, naissance, image, service, competance, type, valide});  
+    console.log(req.files);
+    const image = req.files['image'][0].filename; // Assuming only one image is allowed
+    const cv = req.files['cv'][0].filename; // Assuming only one CV is allowed
+    console.log(image,cv);
+    await Personne.create({cin, nom, prenom, email, tele, naissance, image, cv, service, competance, type, valide});  
     res.send({ status:"Data inserted"});
-    console.log({ cin, nom, prenom, email, tele, naissance, image, service, competance, type, valide } );
+    console.log({ cin, nom, prenom, email, tele, naissance,  image, cv, service, competance, type, valide } );
   }catch(eror){
     res.send({ status:"error"})
   }

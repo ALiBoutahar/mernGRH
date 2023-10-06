@@ -10,6 +10,7 @@ function AjouterPatient() {
     const [email, setemail] = useState("");
     const [tele, settele] = useState("");
     const [image, setimage] = useState("");
+    const [cv, setcv] = useState("");
     const [service, setservice] = useState("");
     const [type, settype] = useState("");
     const [naissance, setnaissance] = useState("");
@@ -44,7 +45,6 @@ function AjouterPatient() {
         setprenom('');
         setemail('');
         settele('');
-        setimage('');
         setservice('');
         setnaissance('');
         setcompetances([]);
@@ -57,10 +57,16 @@ function AjouterPatient() {
             tele:tele,
             naissance:naissance,
             image:image,
+            cv:cv,
             service:service,
             type:type,
             competance:competances,
             valide:0,  
+        }, 
+        {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
         }
         )
             .then(Response => {
@@ -82,7 +88,7 @@ function AjouterPatient() {
                 </h1>
                 <br />
                 <div>
-                    <form className="row g-3">
+                    <form className="row g-3" enctype="multipart/form-data">
                         <div className="input-group col-12">
                             <div className="input-group row g-3 mx-1">
                                 <button className="w-75 btn btn-outline-secondary border-right-0 " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ajouter Competances Obligatoir</button>
@@ -134,21 +140,25 @@ function AjouterPatient() {
                         <div className="col-md-6">
                             <input type="email" className="form-control" id="email" name='email' value={email} onChange={(e)=>setemail(e.target.value)} placeholder="E-MAIL"/>
                         </div>
-                        <div className="col-4">
+                        <div className="col-6">
                             <label className="form-label">Date de naissance</label>
-                            <input type="date" className="form-control" id="dateN" name='datenaissance' value={naissance} onChange={(e)=>setnaissance(e.target.value)} placeholder="Entrez la date de naissance" />
+                            <input type="date" className="form-control" id="dateN" name='datenaissance'  onChange={(e)=>setnaissance(e.target.value)} placeholder="Entrez la date de naissance" />
                         </div>
-                        <div className="col-4">
+                        <div className="col-6">
                             <label className="form-label">image</label>
-                            <input type="file" className="form-control" id="image" name='image' value={image} onChange={(e)=>setimage(e.target.value)} placeholder="Entrez la date de naissance" />
+                            <input type="file" className="form-control" id="image" name='image' onChange={(e)=>setimage(e.target.files[0])} />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-6">
                             <label className="form-label">Type</label>
                             <select id="type" name='type' className="form-control" onChange={(e)=>settype(e.target.value)}>
                                 <option selected disabled >Select Type</option>
                                 <option value="Stagiair">Stagiair</option>
                                 <option value="Employer">Employer</option>
                             </select>
+                        </div>
+                        <div className="col-6">
+                            <label className="form-label">cv</label>
+                            <input type="file" className="form-control" id="cv" name='cv' onChange={(e)=>setcv(e.target.files[0])} />
                         </div>
                         {/* *************************************************** */}
                         <div className="col-12">

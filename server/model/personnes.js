@@ -9,11 +9,11 @@ const PersonnesGRH = mongoose.Schema(
         tele:String,
         naissance:String,
         image:String,
+        cv:String,
         service:String,
         type:String,
         competance:[],
         valide:String, 
-         
     },
     {
         collection:"personnesGRH",
