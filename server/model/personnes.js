@@ -12,6 +12,7 @@ const PersonnesGRH = mongoose.Schema(
         cv:String,
         service:String,
         type:String,
+        absences: [],
         competance:[],
         valide:String, 
     },

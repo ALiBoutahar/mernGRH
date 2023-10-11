@@ -6,7 +6,7 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../client/public/images'); // Store uploads in the 'uploads' directory
+    cb(null, '../client/public/images/files-persones'); // Store uploads in the 'uploads' directory
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
@@ -87,7 +87,7 @@ personeRoutes.post("/edit_personne",async( req, res )=>{
         console.log("data update")
       })
       .catch((error)=>{
-        res.send({status : "error", data: error});
+        res.send({status : "error", data: error}); 
       });
   }catch(eror){res.send({ status:"error"})}
 });

@@ -38,9 +38,14 @@ input[type="text"]{
 }
 .p{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .wd2{
     width: 75%;
 }
+
+/* .example {
+    justify-content: start;
+    justify-content: flex-start;
+} */

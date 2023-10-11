@@ -7,25 +7,25 @@ function DashItem() {
     <>
     <div className='row col-md-12'>
         <div className='col-md-4 col-sm-4' style={{maxWidth : "25%"}} >
-            {/* <Link to={"/Caisse"}> */}
+            <Link to={"/"}>
                 <div className='column'>
                     <div className='png'>
                     <i className="fa fa-cart-plus"></i>
-                    <h5>compitances</h5>
+                    <h5>test</h5>
                     </div>
                 </div>
-            {/* </Link> */}
+            </Link>
         </div>
     
         <div className='col-md-4 col-sm-4' style={{maxWidth : "25%"}} >
-            {/* <Link to={"/AjouterProduit"}> */}
+            <Link to={"/AfficherAbsences"}>
                 <div className='columntwo'>
                     <div className='png'>
                     <i className="fa fa-shopping-bag"></i>
-                    <h5>Employers</h5>
+                    <h5>Absences</h5>
                     </div>
                 </div>
-            {/* </Link> */}
+            </Link>
         </div>
     
         <div className='col-md-4 col-sm-4' style={{maxWidth : "25%"}} >

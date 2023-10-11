@@ -32,7 +32,6 @@ const SideNavBar = (props) => {
 
 	const menuItems = [
 		{
-
 			id : 1,
 			text: "Accueil",
 			icon: "icons/grid.svg",
@@ -98,15 +97,21 @@ const SideNavBar = (props) => {
 					</button>
 				</div>
 				<div className="nav-menu">
-					{menuItems.map(({ text, icon  , to , id}) => (
-						<Link key={id}
+					{/* {menuItems.map((item) => (
+						<Link key={item.id}
 							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-							to={to}
+							to={item.to}
 						>
-							<img className="menu-item-icon" src={icon} alt="" />
-							{isExpanded && <p>{text}</p>}
+							<img className="menu-item-icon" src={item.icon} alt="" />
+							{isExpanded && <p>{item.text}</p>}
 						</Link>
-					))} 
+					))}  */}
+					{menuItems.map((item) => (
+						<Link key={item.id} className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} to={item.to}>
+							<img className="menu-item-icon" src={item.icon} alt="" />
+							{isExpanded && <p>{item.text}</p>}
+						</Link>
+					))}
 				</div>
 			</div>
 			<div className="nav-footer">

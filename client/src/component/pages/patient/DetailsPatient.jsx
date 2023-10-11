@@ -41,30 +41,39 @@ function DetailsPatient() {
         settype(data.data.type);
         setcompetance(data.data.competance);
       }); 
-  },[]);  
+  },[id]);  
 
   return (
     <div className='container'>
        <Link to={"/Patient"} className="btn btn-danger mt-1 mb-2"><i className="fa fa-share"></i></Link>
       <form className="row g-3">
-        <div className="col-md-2 d-flex align-items-center">
-          <img src={`/images/${image}`} alt="" width={100} height={100}/>
-        </div>
-        <div className="col-md-5 d-flex align-items-center">
-          <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> CIN </label>
-          <input type="text" value= {cin} className=" form-control text-center"
-          style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
-        </div>  
-        <div className="col-md-5 d-flex align-items-center">
-          <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> Nom </label>
-          <input type="text" value= {nom} className=" form-control text-center"
-          style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
-        </div>  
-        <div className="col-md-6 d-flex align-items-center">
-          <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> Prenom </label>
-          <input type="text" value= {prenom} className=" form-control text-center"
-          style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
-        </div>
+        <div className="col-md-3 d-flex align-items-center">
+          <img  src={`/images/files-persones/${image}`} alt="" width={170} height={170}/>
+          <a href={`/images/files-persones/${cv}`} className="w-100 form-control text-center"
+          style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}>CV</a>
+        </div> 
+        <div className="col-md-9 row d-flex align-items-center">
+          <div className="col-md-6 d-flex align-items-center">
+            <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> CIN </label>
+            <input type="text" value= {cin} className=" form-control text-center"
+            style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
+          </div>  
+          <div className="col-md-6 d-flex align-items-center">
+            <label className="w-25 form-control text-center" style={{marginTop:"2%"}}> Service </label>
+            <input type="text" value= {service} className=" form-control text-center"
+            style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
+          </div>  
+          <div className="col-md-6 d-flex align-items-center">
+            <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> Nom </label>
+            <input type="text" value= {nom} className=" form-control text-center"
+            style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
+          </div>  
+          <div className="col-md-6 d-flex align-items-center">
+            <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> Prenom </label>
+            <input type="text" value= {prenom} className=" form-control text-center"
+            style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
+          </div>
+        </div>     
         <div className="col-md-6 d-flex align-items-center">
           <label className="w-25 form-control text-center" style={{marginTop:"2%"}}> Phone </label>
           <input type="text" value= {tele} className=" form-control text-center"
@@ -80,12 +89,6 @@ function DetailsPatient() {
           <input type="text" value= {naissance} className=" form-control text-center"
           style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
         </div>
-        
-        <div className="col-md-6 d-flex align-items-center">
-          <label className="w-25 form-control text-center" style={{marginTop:"2%"}}> Service </label>
-          <input type="text" value= {service} className=" form-control text-center"
-          style={{marginLeft:"5%" , backgroundColor: '#e3f2fd' }}/>
-        </div>  
         <div className="col-md-6 d-flex align-items-center">
           <label className="w-25 form-control text-center" style={{marginTop:"3%"}}> Type </label>
           <input type="text" value= {type} className=" form-control text-center"
@@ -99,13 +102,8 @@ function DetailsPatient() {
               <input type="text" value= {p.value} className="w-25 form-control text-center" style={{color: 'red' }}/>
             </div>
           ))}
-        </div>
-        <iframe
-          src={`/images/${cv}`}
-          style={{ width: '100%', height: '500px', border: 'none' }}
-          title="PDF Viewer"
-          />
-        </form>
+        </div>        
+      </form>
   </div>
   )
 }

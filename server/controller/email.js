@@ -27,7 +27,7 @@ sendRoutes.post('/send-email', upload.single('attachment'), async (req, res) => 
       service: 'Gmail',
       auth: {
         user: 'ali27karam09@gmail.com',
-        pass: `${pass}`, // Use your actual password securely, perhaps from environment variables
+        pass: `${pass}`, 
       },
     });
 

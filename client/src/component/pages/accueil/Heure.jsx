@@ -1,21 +1,25 @@
-import React from 'react'
-import './dash.css'
+
+import React from 'react';
+import './dash.css';
+
 function Heure() {
-    let localDate = new Date();
-    let getDay = localDate.getDate() 
-    let getMonth = localDate.getMonth()
-    let getYears = localDate.getFullYear()
-    if(localDate.getDate()<10){
-        getDay =  "0"+localDate.getDate() 
-    }
-    if(localDate.getMonth()<10){
-        getMonth =  "0"+(localDate.getMonth() +1)
-    }
+  const localDate = new Date();
+
+  // Define options to format the date as "day/month/year"
+  const options = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  };
+
+  // Format the date using the options
+  const formattedDate = localDate.toLocaleString('en-US', options);
+
   return (
-      <div className="date-area">
-        <input type='text' disabled defaultValue={getDay+"-"+getMonth+"-"+getYears} />
-      </div>
-  )
+    <div className="date-area">
+      <input type="text" disabled defaultValue={formattedDate} />
+    </div>
+  );
 }
 
-export default Heure
+export default Heure;

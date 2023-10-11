@@ -38,12 +38,11 @@ return (
                 </div>
                 <div className="col-md-12 ">
                     <label  className="form-label">Message</label>
-                    <textarea  cols="10" rows="3" className="form-control text-left" name='message' value={message} onChange={(e)=>setmessage(e.target.value)}></textarea>
+                    <textarea  cols="10" rows="5" className="form-control text-left" name='message' value={message} onChange={(e)=>setmessage(e.target.value)}></textarea>
                 </div>
                 <div className="col-md-12 ">
                     <label  className="form-label">File</label>
                     <input type="file" className="form-control text-left" name='attachment' onChange={(e) => setattachment(e.target.files[0])} />
-
                 </div>
                 <div className="col-md-12 ">
                     <button className='btn btn-success mt-2' onClick={valide}>Send</button>

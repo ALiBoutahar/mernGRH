@@ -26,6 +26,8 @@ mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`);
 app.use(require("./controller/persone"));
 app.use(require("./controller/users"));
 app.use(require("./controller/email"));
+app.use(require("./controller/absance"));
+
 
 app.get("/",async(req,res)=>{res.render("home/index");});
 app.get("/send-ejs",async(req,res)=>{res.render("send",{ statuts: "", color: "" });});

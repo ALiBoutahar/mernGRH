@@ -10,11 +10,12 @@ import './component/SideNavBar/SideNavBar.css';
 import Signup from "./component/login/Signup";
 import Login from "./component/login/Login";
 import Send from "./component/login/sending";
-
+import GestionAbsences from "./component/pages/absance/addAbsance";
+import AfficherAbsences from "./component/pages/absance/absence";
 const App = () => {
     const isloggedIn = window.localStorage.getItem("loggedIn");
     // console.log(isloggedIn);
-    return (
+    return ( 
         <Router>
             <Routes>
                 <Route exact path="/" element={isloggedIn === null ? <Login /> :<Acceuil  />} />
@@ -27,6 +28,8 @@ const App = () => {
                 <Route path='/Patient/DetailsPatient/:id' element={isloggedIn === null ? < Login /> : <DetailsPatient/>} />
                 <Route path='/Parametre' element={isloggedIn === null ? < Login /> : <Parametre />} />
                 <Route path='/Contact-us' element={isloggedIn === null ? < Login /> : <Send/>} />
+                <Route path='/AddAbsance' element={isloggedIn === null ? < Login /> : <GestionAbsences/>} />
+                <Route path='/AfficherAbsences' element={isloggedIn === null ? < Login /> : <AfficherAbsences/>} />
 
             </Routes>
         </Router> 

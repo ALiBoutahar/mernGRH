@@ -80,13 +80,14 @@ function AjouterPatient() {
     //     <SideNavBar/>
     //     </div>
         // <div className='content'></div> x = container
-        <div className='x mx-2 mt-2' >
-            <div className='container add' >
-                <Link to={"/Patient"} className="btn btn-danger"><i className="fa fa-share"></i></Link>
-                <h1 className='mt-2'>
-                    Ajouter Personne
-                </h1>
-                <br />
+        <div className='x mx-2 mt-1' >
+            <div className='container ' >
+                <div className="row p-2">
+                    <div className=' col-md-6 '>
+                    <Link to={"/Patient"} className="btn btn-danger"><i className="fa fa-share"></i></Link>
+                    </div>
+                    <h1 className=' col-md-6 '>Ajouter Personne</h1>
+                </div>
                 <div>
                     <form className="row g-3" enctype="multipart/form-data">
                         <div className="input-group col-12">
@@ -152,8 +153,8 @@ function AjouterPatient() {
                             <label className="form-label">Type</label>
                             <select id="type" name='type' className="form-control" onChange={(e)=>settype(e.target.value)}>
                                 <option selected disabled >Select Type</option>
-                                <option value="Stagiair">Stagiair</option>
-                                <option value="Employer">Employer</option>
+                                <option value="stagiaire">stagiaire</option>
+                                <option value="employé">employé</option>
                             </select>
                         </div>
                         <div className="col-6">
@@ -161,9 +162,9 @@ function AjouterPatient() {
                             <input type="file" className="form-control" id="cv" name='cv' onChange={(e)=>setcv(e.target.files[0])} />
                         </div>
                         {/* *************************************************** */}
-                        <div className="col-12">
-                            <button type="submit" className="btn btn-success" onClick={Add}>Ajouter</button>
-                            <Link to={"/Patient"} className="btn btn-warning mx-1">Annuler</Link>
+                        <div className="col-12 d-flex justify-content-end">
+                            <button type="submit" className="w-25 btn btn-success" onClick={Add}>Ajouter</button>
+                            {/* <Link to={"/Patient"} className="btn btn-warning mx-1">Annuler</Link> */}
                         </div>
                     </form>
                 </div>
